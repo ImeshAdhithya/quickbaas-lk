@@ -1,7 +1,10 @@
+import Home from './pages/Home';
+import './App.css';
+
 function App() {
   return (
-    <div>
-      <h1>QuickBaas Project Ready!</h1>
+    <div className="App">
+      <Home />
     </div>
   );
 }
