@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header className="navbar-container">
       <div className="logo">
-        <h2>QuickBaas<span>.lk</span></h2>
+        <img src="/main.png" alt="QuickBaas Logo" className="nav-logo" />
       </div>
 
       <nav className="nav-links">
