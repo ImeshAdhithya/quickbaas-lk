@@ -1,7 +1,6 @@
-import React from 'react';
 import { 
   MapPin, CheckCircle, Search, 
-  MessageSquare, ExternalLink, Star, Shield, Clock, Wrench 
+  MessageSquare, ExternalLink, Star, Shield, Clock
 } from 'lucide-react';
 
 export default function HomeownerDashboard() {
