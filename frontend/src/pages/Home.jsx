@@ -5,10 +5,10 @@ import HowItWorks from '../components/HowItWorks';
 import Features from '../components/Features';
 import Footer from '../components/Footer';
 
-const Home = () => {
+const Home = ({ onLoginClick }) => {
   return (
     <div className="home-page">
-      <Navbar />
+      <Navbar onLoginClick={onLoginClick} />
       <main>
         <Hero />
         <Categories />

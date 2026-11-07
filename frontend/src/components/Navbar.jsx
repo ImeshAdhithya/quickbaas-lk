@@ -1,6 +1,7 @@
+import React from 'react';
 import { User } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onLoginClick }) => {
   return (
     <header className="navbar-container">
       <div className="logo">
@@ -15,7 +16,11 @@ const Navbar = () => {
 
       <div className="nav-actions">
         <button className="lang-btn">EN</button>
-        <button className="login-btn">Log in</button>
+        
+        <button className="login-btn" onClick={onLoginClick}>
+           Log in
+        </button>      
+        
         <button className="join-btn">
           Join as technician <User size={16} />
         </button>
