@@ -9,13 +9,13 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* Landing Page එක (URL: /) */}
+          {/* URL of Landing Page */}
           <Route path="/" element={<Home />} />
 
-          {/* Login Page එක (URL: /login) */}
+          {/* URL of Login Page */}
           <Route path="/login" element={<Login />} />
 
-          {/* Homeowner Dashboard එක (URL: /dashboard) */}
+          {/* URL of Homeowner Dashboard */}
           <Route path="/dashboard" element={<HomeownerDashboard />} />
         </Routes>
       </div>
