@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DashboardNavbar from '../components/DashboardNavbar';
+import Footer from '../components/Footer';
 import { 
   MapPin, CheckCircle, Search, 
   MessageSquare, ExternalLink, Star, Shield, Clock
@@ -161,6 +162,8 @@ export default function HomeownerDashboard() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
