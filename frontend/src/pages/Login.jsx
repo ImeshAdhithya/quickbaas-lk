@@ -1,18 +1,20 @@
 import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, AlertCircle, ShieldCheck } from 'lucide-react';
 
-export default function Login({ onLoginSuccess, onNavigateToRegister }) {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // For testing/mock purpose: if email/password is filled, let's trigger success or handle validation
     if (email && password) {
       setError(false);
-      if (onLoginSuccess) onLoginSuccess();
+      navigate('/dashboard');
     } else {
       setError(true);
     }
@@ -21,7 +23,9 @@ export default function Login({ onLoginSuccess, onNavigateToRegister }) {
   return (
     <div className="login-page-container">
       <div className="login-brand-header">
-        <h2>Quick<span>Baas</span>.lk</h2>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <h2>Quick<span>Baas</span>.lk</h2>
+        </Link>
         <p>Verified Repair Technicians Marketplace</p>
       </div>
 
@@ -84,9 +88,9 @@ export default function Login({ onLoginSuccess, onNavigateToRegister }) {
 
         <div className="login-footer-text">
           Don't have an account?{' '}
-          <button type="button" onClick={onNavigateToRegister} className="text-link-btn">
+          <Link to="/register" className="text-link-btn">
             Register
-          </button>
+          </Link>
         </div>
       </div>
 

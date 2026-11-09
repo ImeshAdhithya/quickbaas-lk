@@ -1,31 +1,25 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import HomeownerDashboard from './pages/HomeownerDashboard';
 import './App.css';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
   return (
-    <div className="App">
-      {currentPage === 'home' && (
-        <Home 
-          onLoginClick={() => setCurrentPage('login')} 
-        />
-      )}
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Landing Page එක (URL: /) */}
+          <Route path="/" element={<Home />} />
 
-      {currentPage === 'login' && (
-        <Login 
-          onLoginSuccess={() => setCurrentPage('dashboard')}
-          onNavigateToRegister={() => alert('Navigate to Register page')} 
-        />
-      )}
+          {/* Login Page එක (URL: /login) */}
+          <Route path="/login" element={<Login />} />
 
-      {currentPage === 'dashboard' && (
-        <HomeownerDashboard />
-      )}
-    </div>
+          {/* Homeowner Dashboard එක (URL: /dashboard) */}
+          <Route path="/dashboard" element={<HomeownerDashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
